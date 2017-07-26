@@ -2,14 +2,16 @@
 <head>
 	<title>jQuery</title>
 	<link rel="stylesheet" type="text/css" href="debugging_jquery.css">
-	<script type="text/javascript" src='http://code.jquery.com/jquery-1.10.2.min.js'></script>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script type="text/javascript">
+		$(document).ready(function(){
 	
-			$('p, h3, li').hoverfunction(){
+			$('p, h3, li').hover(function() {
 				$(this).css('color', 'white');
-			}, function(){
+				}, function() {
 				$(this).css('color', 'black');
-			});
+				}
+			);
 
 			$('a').click(function(){
 				alert("we don't actually serve pizza...");
@@ -17,16 +19,19 @@
 
 			$('img').click(function(){
 				$(this).slideUp();
-			);
+			});
 
 			$('h5').click(function(){
-				$('img').slide Down();
+				$('img').slideDown();
 			});
 
 			$('button').click(function(){
-				var result = $('input:checked').value()  
+				var result = $('input:checked').val();  
 				alert("Thank you for your input, we like " + result + " too!");
 			});	
+
+
+		});
 
 	</script>
 </head>
@@ -71,7 +76,7 @@
 					<li>Dojo size: $34.00 (feeds 10 ninjas)</li>
 					<li>Toppings: $2.00 per small, $2.50 per medium, $2.75 per large, $3.00 per Dojo</li>
 				</ul>
-				<a href="#">Click here to order!</a>
+				<a href="#">Click here to order!</a> 
 			</div>
 			
 		</div>  <!--end of left content -->
